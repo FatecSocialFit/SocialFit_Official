@@ -1,0 +1,134 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SocialFit</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/Styles_.css?v=14" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=3">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="d-flex flex-column wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm border-bottom" style="background-color: #808080">
+                <div class="container">
+                    <a class="navbar-brand" asp-page="/Index"><b>SOCIALFIT</b></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <span class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" asp-page="Index">Contato <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" asp-page="About">Sobre <span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav">
+                            @{ if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="/PageUser">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="#">Meus treinos <span class="sr-only">(current)</span></a>
+                                    </li>
+
+
+                                    <li class="nav-item active">
+                                        <div class="rounded-circle bg-light mx-3" style="width:30px; height:30px; margin-top:5px"></div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                        </a>
+                                    
+                                        <div class="dropdown-menu" style="background-color:#555" aria-labelledby="dropdownMenuReference"> 
+                                           
+                                            <a class="dropdown-links text-white" href="Clients/Edit">Perfil</a>
+                                            <a class="dropdown-links text-white" href="#">Promover treino</a>
+                                            <div class="dropdown-divider"></div>
+                                            <form method="post">
+                                                <button type="submit" asp-page="/Account/Login" asp-page-handler="Logout" class="btn-logout dropdown-links text-white">sair</button>
+                                            </form>
+
+                                        </div>
+                                    </li>
+
+                                }
+                                else
+                                {
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="/Account/Login">Acessar <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" asp-page="/Clients/create">Criar Conta <span class="sr-only">(current)</span></a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                </div>
+    </div>
+    </nav>
+    </header>
+    <partial name="_CookieConsentPartial" />
+    <main role="main" class="flex-fill">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted bg-light">
+        <div class="container">
+            &copy; 2021 - RazorPagesMovie - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

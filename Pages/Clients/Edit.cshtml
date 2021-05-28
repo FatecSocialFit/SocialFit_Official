@@ -1,0 +1,61 @@
+﻿@page
+@model SocialFit.Pages.Clients.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row justify-content-center mt-3">
+    <div class="col-12 col-md-4 text-center">
+        <h2>Editar perfil</h2>
+        <hr />
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex rounded-circle my-4 text-center align-items-center justify-content-center" style="width:100px; height:100px;background-color:#ccc; margin: auto auto">
+                <i class='fas fa-camera' style='font-size:36px;color:rgb(0, 0, 0,0.3)'></i>
+            </div>
+            <input type="hidden" asp-for="Client.Id" />
+
+            <div class="input-form">
+                <input asp-for="Client.Name" placeholder="Nome Completo" />
+                <span asp-validation-for="Client.Name" class="text-danger"></span>
+            </div>
+            <div class="input-form">
+                <select asp-for="Client.genre" value="Client.genre">
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                </select>
+                <span asp-validation-for="Client.genre" class="text-danger"></span>
+            </div>
+
+            <div class="input-form">
+                <input asp-for="Client.DateBorn" />
+                <span asp-validation-for="Client.DateBorn" class="text-danger"></span>
+            </div>
+
+            <div class="input-form">
+                <input type="hidden" asp-for="Client.Login" placeholder="email@exemplo.com" />            
+            </div>
+
+            <div class="input-form">
+                <input type="hidden" asp-for="Client.Password" placeholder="Senha" />            
+            </div>
+
+            <div class="d-flex  justify-content-center">
+
+                <button type="submit" class="btn-cadastrar mt-3">Salvar alterações</button>
+            </div>
+            <div class="d-flex  justify-content-center">
+                <a asp-page="./index" class="mt-4">voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

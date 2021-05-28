@@ -1,0 +1,253 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: font-family: 'Roboto', sans-serif;
+}
+
+
+.banner {
+    width: 100%;
+    max-width:1200px;
+    display: flex;
+    height: 450px;
+    margin: 0 auto;
+    padding: 0 25px;
+    align-items: center;
+    justify-content: center;
+    background: url("../Assets/Runner (1).jpg");
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    text-align: center
+}
+
+.banner > h5{
+    color: #fff;
+    font-size: 2rem
+}
+
+.btn-baner {
+    width: 300px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 25px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    margin: 30px auto
+}
+
+    .btn-baner:focus {
+        outline-style: none;
+    }
+
+@media only screen and (max-width: 800px) {
+  .banner{
+      height:200px
+  }
+
+    .banner > h5 {
+        font-size: 1rem
+    }
+  .btn-baner{
+      width:200px;
+      height:35px;
+      font-size: 1rem;
+  }
+
+    .container-card {
+        width: 100% !important;
+        display: block;
+    }
+
+    .container-cadastro{
+        width: 100%;
+    }
+
+}
+
+
+.anuncios {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    padding: 10px;
+    color: #555;
+    flex-direction: column;
+    text-align: center;
+}
+
+.anuncios > h5{
+    font-size: 1.5rem
+
+}
+
+    .cards-img {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        padding: 25px;
+        flex-wrap: wrap
+    }
+
+.container-card {
+    width: 12rem;
+    height: 250px; 
+    margin: 10px auto;
+}
+
+.card-body > h5 {
+
+    font-size: 1rem;
+}
+
+.card > img {
+   width:100%;
+   height: 130px
+}
+
+/**#7226d3*/
+
+.vantagens {
+    background-color: #808080;
+    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    font-size:1.5rem
+}
+
+.vantagens > h5 {
+    font-size: 1.5rem;
+}
+
+.lista-vantagens{
+    margin-top: 25px;
+}
+
+
+.lista-vantagens > ul {
+    margin-left: 25px;
+    list-style-type: square;
+}
+
+ .lista-vantagens > ul > li {
+        margin-left: 25px;
+        font-size: 1.3rem;
+        margin-top: 15px
+}
+
+.container-aplicativos{
+    max-width:1000px;
+    width:100%;
+    height:200px;
+    margin:50px auto;
+    text-align:center;
+    display: flex;
+    flex-direction: column    
+}
+
+.loja-aplicativos{
+    max-width:1000px;
+    width: 100%;
+    margin:30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loja-aplicativos > h5 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.loja-aplicativos > ul{
+    list-style: none;
+    color:#555;
+    display: flex;
+    margin: 0 auto;
+}
+
+.loja-aplicativos > ul > li {
+     color:#555;
+     margin: 15px 40px;
+     font-size:1.5rem
+ }
+
+.loja-aplicativos > ul > li > p{
+    margin-top:20px;
+}
+
+
+
+input , select{
+    border-bottom: 2.5px solid #555;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height:30px;
+    padding-left:10px;
+}
+
+ input:focus, select:focus {
+        outline-style: none;
+  }
+
+.input-form{
+   margin: 20px auto;
+  
+}
+
+
+label {
+    font-size: 1rem
+}
+
+.btn-cadastrar {
+    background-color: #232ef2;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+}
+
+.btn-cadastrar:focus{
+    outline-style: none;
+   
+}
+
+.btn-logout{
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-links{
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-links:hover, .dropdown-links:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #16181b;
+}
